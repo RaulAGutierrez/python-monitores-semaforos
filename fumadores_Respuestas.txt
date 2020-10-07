@@ -1,0 +1,30 @@
+1.- Usar fumadores.py como base para sincronizar el agente y los fumadores.
+Se uso un monitor para realizar la sincronizacion.
+
+2.-¿Hay alguna sección crítica?
+Si, a mi entender la seccion critica son las variables Globales:
+papelEnMesa = False
+fosforosEnMesa = False
+tabacoEnMesa = False
+Su cambio de estado afectan a los threads.
+
+3.- En vez de con flags que den cuenta si hay o no tal cosa en la mesa, realice una versión con listas. Por ejemplo listaPapel si no está vacía es porque hay papel (la puede llenar con cualquier cosa, con 1s por ejemplo).
+No entendi este punto.
+
+
+Bonus: Variantes.
+
+Que haya tres agentes, y no una solo, uno por cada par de ingredientes. Compiten entre sí para entrar a la mesa y poner sus dos respectivos ingredientes.
+
+
+Que la cantidad de veces que el agente pone ingredientes en la mesa sea acotada.
+
+
+Que puedan haber en la mesa hasta un máximo de dos por cada ingrediente.
+
+
+Que puedan haber en la mesa hasta un máximo de dos por cada ingrediente, salvo para fósforos que sea un máximo de uno.
+
+
+Que los tres fumadores solamente ahora sean armadores de cigarillos, y que haya cuarto y único fumador. Como fumar es más lento que armar (poner los sleep para que se simule esto), entonces que haya una cantidad acotada de cigarrillos armados sin fumar.
+
