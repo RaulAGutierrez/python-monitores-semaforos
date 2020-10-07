@@ -15,7 +15,7 @@ No entendi este punto.
 Bonus: Variantes.
 
 Que haya tres agentes, y no una solo, uno por cada par de ingredientes. Compiten entre sí para entrar a la mesa y poner sus dos respectivos ingredientes.
-
+Archivo: fumadores_TresAgentes.py
 
 Que la cantidad de veces que el agente pone ingredientes en la mesa sea acotada.
 
