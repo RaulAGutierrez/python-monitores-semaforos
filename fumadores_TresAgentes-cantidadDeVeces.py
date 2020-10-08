@@ -11,6 +11,7 @@ tabacoEnMesa = False
 
 
 def agentePapel():
+
         global papelEnMesa, fosforosEnMesa, tabacoEnMesa
         while True:
             with monitor:
@@ -20,9 +21,11 @@ def agentePapel():
                 time.sleep(2)
                 caso = random.choice([0,1]) #al azar
                 if caso == 1:
-                    papelEnMesa = True
-                    logging.info(f'El ingrediente papel esta en la mesa')
-                    time.sleep(3)
+
+                        papelEnMesa = True
+                        logging.info(f'El ingrediente papel esta en la mesa')
+                        #time.sleep(3)
+            time.sleep(3)
             # esperar a reponer las cosas una vez que alguien haya tomado las dos anteriores
 
 def agenteFosforo():
@@ -65,8 +68,8 @@ def fumadorConPapel():
             logging.info(f'Fumador armandose el pucho con su papel')
             logging.info(f'Fumando como loco...')
             time.sleep(2)
+            papelEnMesa = False
             fosforosEnMesa = False
-            tabacoEnMesa = False
         # si hay fósforos y tabaco en la mesa
             # tomarlos
             # armar cigarrillo y fumar: se puede simular con un sleep
@@ -111,7 +114,6 @@ def mesaDeFumadores(monitor):
     while True: 
         
         with monitor: 
-            
             monitor.notify()
 
             
@@ -119,7 +121,7 @@ def mesaDeFumadores(monitor):
 monitor = threading.Condition()
 
 #agenteHilo = threading.Thread(target=agente)
-agentePapel = threading.Thread(target=agentePapel)
+agentePapel = threading.Thread(target=agentePapel)  
 agenteFosforo = threading.Thread(target=agenteFosforo)
 agenteTabaco = threading.Thread(target=agenteTabaco)
 
